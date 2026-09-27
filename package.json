@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-directoryz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "n8n community node for Directoryz: OAuth account connection and 4 workflow operations.",
   "license": "MIT",
   "homepage": "https://directoryz.app",
@@ -14,7 +14,7 @@
   "author": {
     "name": "Directoryz",
     "url": "https://directoryz.app",
-    "email": "codex@users.noreply.github.com"
+    "email": "saeedmshdi@gmail.com"
   },
   "repository": {
     "type": "git",
