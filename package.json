@@ -1,0 +1,58 @@
+{
+  "name": "n8n-nodes-directoryz",
+  "version": "1.0.0",
+  "description": "n8n community node for Directoryz: OAuth account connection and 4 workflow operations.",
+  "license": "MIT",
+  "homepage": "https://directoryz.app",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "directoryz",
+    "oauth",
+    "automation"
+  ],
+  "author": {
+    "name": "Directoryz",
+    "url": "https://directoryz.app",
+    "email": "codex@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/directoryz-app/n8n-nodes-directoryz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/directoryz-app/n8n-nodes-directoryz/issues"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "files": [
+    "dist",
+    "examples"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/DirectoryzOAuth2Api.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Directoryz/Directoryz.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.49.1",
+    "typescript": "5.9.2",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "@types/node": "22.19.15"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

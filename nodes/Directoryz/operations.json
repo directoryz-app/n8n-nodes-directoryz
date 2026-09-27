@@ -1,0 +1,76 @@
+[
+  {
+    "name": "get_directory",
+    "description": "Read an owned directory without publishing it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "directoryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "directoryId"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_profile",
+    "description": "Read your connected workspace profile.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_directories",
+    "description": "List directories in your selected Directoryz workspace.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_listings",
+    "description": "Read listings within an owned directory.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "directoryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "directoryId"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  }
+]

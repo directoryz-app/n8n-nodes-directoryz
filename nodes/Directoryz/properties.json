@@ -1,0 +1,65 @@
+[
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
+      {
+        "name": "Get Directory",
+        "value": "get_directory",
+        "description": "Read an owned directory without publishing it",
+        "action": "Get Directory in Directoryz"
+      },
+      {
+        "name": "Get Profile",
+        "value": "get_profile",
+        "description": "Read your connected workspace profile",
+        "action": "Get Profile in Directoryz"
+      },
+      {
+        "name": "List Directories",
+        "value": "list_directories",
+        "description": "List directories in your selected Directoryz workspace",
+        "action": "List Directories in Directoryz"
+      },
+      {
+        "name": "List Listings",
+        "value": "list_listings",
+        "description": "Read listings within an owned directory",
+        "action": "List Listings in Directoryz"
+      }
+    ],
+    "default": "get_profile"
+  },
+  {
+    "displayName": "Directory Id",
+    "name": "get_directory__directoryId",
+    "type": "string",
+    "default": "",
+    "required": true,
+    "description": "The directory id for this operation",
+    "displayOptions": {
+      "show": {
+        "operation": [
+          "get_directory"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Directory Id",
+    "name": "list_listings__directoryId",
+    "type": "string",
+    "default": "",
+    "required": true,
+    "description": "The directory id for this operation",
+    "displayOptions": {
+      "show": {
+        "operation": [
+          "list_listings"
+        ]
+      }
+    }
+  }
+]
