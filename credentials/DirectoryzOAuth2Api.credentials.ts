@@ -8,6 +8,7 @@ export class DirectoryzOAuth2Api implements ICredentialType {
   icon = { light: "file:directoryz.svg", dark: "file:directoryz.svg" } as const;
   extends = ["oAuth2Api"];
   properties: INodeProperties[] = [
+    {displayName:'Scope',name:'scope',type:'hidden',default:'account:read webhooks:manage'},
     {
       displayName: "Use Dynamic Client Registration",
       name: "useDynamicClientRegistration",
@@ -18,13 +19,13 @@ export class DirectoryzOAuth2Api implements ICredentialType {
       displayName: "Server URL",
       name: "serverUrl",
       type: "hidden",
-      default: "https://mcp.directoryz.app/mcp",
+      default: "https://mcp.directoryz.app/v1",
     },
     {
       displayName: "Resource URL",
       name: "resourceUrl",
       type: "hidden",
-      default: "https://mcp.directoryz.app/mcp",
+      default: "https://mcp.directoryz.app/v1",
     },
   ];
 }

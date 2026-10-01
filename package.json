@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-directoryz",
-  "version": "1.0.1",
-  "description": "n8n community node for Directoryz: OAuth account connection and 4 workflow operations.",
+  "version": "2.0.0",
+  "description": "Native Directoryz REST API integration for n8n workflows.",
   "license": "MIT",
   "homepage": "https://directoryz.app",
   "keywords": [
@@ -42,7 +42,8 @@
       "dist/credentials/DirectoryzOAuth2Api.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Directoryz/Directoryz.node.js"
+      "dist/nodes/Directoryz/Directoryz.node.js",
+      "dist/nodes/Directoryz/DirectoryzTrigger.node.js"
     ]
   },
   "devDependencies": {
