@@ -8,11 +8,15 @@ Install `n8n-nodes-directoryz` from **Settings → Community nodes** in your n8n
 
 ## Authentication
 
-Create the **Directoryz OAuth2 API** credential, select **Connect my account**, sign in to Directoryz, and approve the listed permissions. Credentials use dynamic registration, OAuth authorization code flow, PKCE, expiring access tokens, and refresh tokens. The API resource is `https://mcp.directoryz.app/v1`; REST tokens are separate from MCP tokens.
+Create the **Directoryz OAuth2 API** credential, select **Connect my account**, sign in to Directoryz, and approve the listed permissions. Credentials use dynamic registration, OAuth authorization code flow, PKCE, expiring access tokens, and refresh tokens. The API resource is `https://api.directoryz.app/v1`; REST tokens are separate from MCP tokens.
 
-**Upgrading from 1.x:** reconnect the credential before running workflows. Version 2 replaces the old MCP transport with the native REST API. Inputs retain their names, while outputs are the API's resource JSON. Review existing workflows before enabling writes.
+**Upgrading from 1.x or 2.x:** create a new Directoryz OAuth2 API credential and reconnect it before running workflows. Version 3 uses the product REST resource at `https://api.directoryz.app/v1` with its own OAuth audience. Tokens issued for the earlier resource cannot be reused. Inputs retain their names; review the resource JSON and write confirmations before enabling workflows.
 
-## Operations
+## Resources and operations
+
+Choose a **Resource**, then an **Operation**. Only operations and input fields for that resource are shown. Resources: Account, Directory, Listing.
+
+### Requests
 
 | Operation | HTTP request |
 | --- | --- |
@@ -37,6 +41,10 @@ Requests use the fixed product API origin, encode resource identifiers, and do n
 
 Run `npm ci`, `npm run lint`, and `npm test` to build and validate the package with the n8n node CLI. Source and release automation: [directoryz-app/n8n-nodes-directoryz](https://github.com/directoryz-app/n8n-nodes-directoryz). Report node issues in [GitHub Issues](https://github.com/directoryz-app/n8n-nodes-directoryz/issues).
 
-Product: [Directoryz](https://directoryz.app) · [Privacy](https://directoryz.app/privacy/) · [Agent skill](https://github.com/directoryz-app/agent-skill) · [MCP integration](https://github.com/directoryz-app/mcp-server)
+Product: [Directoryz](https://directoryz.app) · [Privacy](https://directoryz.app/privacy/) · [Agent skill](https://github.com/directoryz-app/agent-skill)
 
 MIT license.
+
+## REST API contract
+
+The request origin and OAuth resource are the product API shown above. GET reads a resource, POST creates or requests an explicitly confirmed action, PATCH updates, and DELETE removes the selected owned resource. The node does not forward requests to a protocol server. Authentication, permissions and ownership are enforced before the API executes an operation.

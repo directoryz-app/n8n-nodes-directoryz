@@ -1,5 +1,48 @@
 [
   {
+    "displayName": "Resource",
+    "name": "resource",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
+      {
+        "name": "Account",
+        "value": "account"
+      },
+      {
+        "name": "Directory",
+        "value": "directories"
+      },
+      {
+        "name": "Listing",
+        "value": "listing"
+      }
+    ],
+    "default": "account"
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
+      {
+        "name": "Get Profile",
+        "value": "get_profile",
+        "description": "Read your connected workspace profile",
+        "action": "Get Profile in Directoryz"
+      }
+    ],
+    "default": "get_profile",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "account"
+        ]
+      }
+    }
+  },
+  {
     "displayName": "Operation",
     "name": "operation",
     "type": "options",
@@ -12,17 +55,27 @@
         "action": "Get Directory in Directoryz"
       },
       {
-        "name": "Get Profile",
-        "value": "get_profile",
-        "description": "Read your connected workspace profile",
-        "action": "Get Profile in Directoryz"
-      },
-      {
         "name": "List Directories",
         "value": "list_directories",
         "description": "List directories in your selected Directoryz workspace",
         "action": "List Directories in Directoryz"
-      },
+      }
+    ],
+    "default": "get_directory",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "directories"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
       {
         "name": "List Listings",
         "value": "list_listings",
@@ -30,7 +83,14 @@
         "action": "List Listings in Directoryz"
       }
     ],
-    "default": "get_profile"
+    "default": "list_listings",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "listing"
+        ]
+      }
+    }
   },
   {
     "displayName": "Directory Id",
@@ -43,6 +103,9 @@
       "show": {
         "operation": [
           "get_directory"
+        ],
+        "resource": [
+          "directories"
         ]
       }
     }
@@ -58,6 +121,9 @@
       "show": {
         "operation": [
           "list_listings"
+        ],
+        "resource": [
+          "listing"
         ]
       }
     }

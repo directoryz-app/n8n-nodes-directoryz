@@ -30,7 +30,7 @@ export class Directoryz implements INodeType {
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
     return executeOperations(
       this,
-      "https://mcp.directoryz.app",
+      "https://api.directoryz.app",
       "directoryzOAuth2Api",
       operations as unknown as Operation[],
       routes as Record<string,ResourceRoute>,
