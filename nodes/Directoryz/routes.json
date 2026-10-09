@@ -1,18 +1,18 @@
 {
-  "get_profile": {
-    "method": "GET",
-    "path": "/v1/account"
-  },
-  "list_directories": {
-    "method": "GET",
-    "path": "/v1/directories"
-  },
-  "get_directory": {
-    "method": "GET",
-    "path": "/v1/directories/:directoryId"
-  },
-  "list_listings": {
-    "method": "GET",
-    "path": "/v1/directories/:directoryId/listings"
-  }
+	"get_profile": {
+		"method": "GET",
+		"path": "/v1/account"
+	},
+	"list_directories": {
+		"method": "GET",
+		"path": "/v1/directories"
+	},
+	"get_directory": {
+		"method": "GET",
+		"path": "/v1/directories/:directoryId"
+	},
+	"list_listings": {
+		"method": "GET",
+		"path": "/v1/directories/:directoryId/listings"
+	}
 }
