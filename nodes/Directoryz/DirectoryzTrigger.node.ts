@@ -73,7 +73,7 @@ export class DirectoryzTrigger implements INodeType {
 		properties: [
 			{
 				displayName:
-					'Activating this workflow registers a signed lead.created webhook. Deactivating removes only its own subscription. A public HTTPS n8n webhook URL, workspace admin role, and paid plan are required.',
+					'Activating this workflow registers a signed lead.created webhook. Deactivating removes only its own subscription.',
 				name: 'setup',
 				type: 'notice',
 				default: '',

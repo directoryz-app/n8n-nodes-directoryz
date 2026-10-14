@@ -5,7 +5,11 @@
 	},
 	"list_directories": {
 		"method": "GET",
-		"path": "/v1/directories"
+		"path": "/v1/directories",
+		"pagination": {
+			"items": ["directories"],
+			"kind": "complete"
+		}
 	},
 	"get_directory": {
 		"method": "GET",
@@ -13,6 +17,10 @@
 	},
 	"list_listings": {
 		"method": "GET",
-		"path": "/v1/directories/:directoryId/listings"
+		"path": "/v1/directories/:directoryId/listings",
+		"pagination": {
+			"items": ["items"],
+			"kind": "page"
+		}
 	}
 }

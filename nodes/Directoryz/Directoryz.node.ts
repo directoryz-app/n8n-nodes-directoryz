@@ -13,16 +13,26 @@ export class Directoryz implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Directoryz',
 		name: 'directoryz',
-		icon: { light: 'file:directoryz.svg', dark: 'file:directoryz.svg' },
+		icon: {
+			light: 'file:directoryz.svg',
+			dark: 'file:directoryz.svg',
+		},
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["resource"] + ": " + $parameter["operation"]}}',
 		description: 'Automate your Directoryz account',
-		defaults: { name: 'Directoryz' },
+		defaults: {
+			name: 'Directoryz',
+		},
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 		usableAsTool: true,
-		credentials: [{ name: 'directoryzOAuth2Api', required: true }],
+		credentials: [
+			{
+				name: 'directoryzOAuth2Api',
+				required: true,
+			},
+		],
 		properties: [
 			{
 				displayName: 'Resource',
@@ -139,8 +149,71 @@ export class Directoryz implements INodeType {
 					},
 				},
 			},
+			{
+				displayName: 'Return All',
+				name: 'returnAll',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to return all results or only up to a given limit',
+				displayOptions: {
+					show: {
+						operation: ['list_directories'],
+						resource: ['directories'],
+					},
+				},
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				default: 50,
+				typeOptions: {
+					minValue: 1,
+					numberPrecision: 0,
+				},
+				description: 'Max number of results to return',
+				displayOptions: {
+					show: {
+						operation: ['list_directories'],
+						resource: ['directories'],
+						returnAll: [false],
+					},
+				},
+			},
+			{
+				displayName: 'Return All',
+				name: 'returnAll',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to return all results or only up to a given limit',
+				displayOptions: {
+					show: {
+						operation: ['list_listings'],
+						resource: ['listing'],
+					},
+				},
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				default: 50,
+				typeOptions: {
+					minValue: 1,
+					numberPrecision: 0,
+				},
+				description: 'Max number of results to return',
+				displayOptions: {
+					show: {
+						operation: ['list_listings'],
+						resource: ['listing'],
+						returnAll: [false],
+					},
+				},
+			},
 		],
 	};
+
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		return executeOperations(
 			this,
